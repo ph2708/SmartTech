@@ -110,12 +110,15 @@ No menu **`👑 Super Admin`** (`/super-admin/tenants`):
 
 ---
 
-## 🔑 Credenciais Padrão (Seed)
+## 🔑 Credenciais de Acesso (Login Único em `/login`)
 
-| Perfil | E-mail | Senha | Acesso / Painel |
-|---|---|---|---|
-| **Super Admin (Você)** | `admin@smarttech.com` | `123456` | [http://localhost:8000/super-admin/tenants](http://localhost:8000/super-admin/tenants) |
-| **Lojista Smart Tech** | `smarttech@smarttech.com` | `123456` | [http://localhost:8000/admin/dashboard](http://localhost:8000/admin/dashboard) |
+> 💡 **Como funciona o acesso:** Todos os usuários (Super Admin, Dono da Loja, Gerentes e Técnicos) acessam pela mesma tela de login: **[http://localhost:8000/login](http://localhost:8000/login)**.  
+> O sistema identifica o perfil do usuário e faz o **redirecionamento automático** para o painel correto!
+
+| Perfil | E-mail | Senha | Tela de Entrada | Destino Pós-Login |
+|---|---|---|---|---|
+| 👑 **Super Admin (Gestão Global)** | `admin@smarttech.com` | `123456` | [http://localhost:8000/login](http://localhost:8000/login) | [http://localhost:8000/super-admin/tenants](http://localhost:8000/super-admin/tenants) |
+| 🏬 **Lojista Smart Tech (ERP/Loja)** | `smarttech@smarttech.com` | `123456` | [http://localhost:8000/login](http://localhost:8000/login) | [http://localhost:8000/admin/dashboard](http://localhost:8000/admin/dashboard) |
 
 ---
 
