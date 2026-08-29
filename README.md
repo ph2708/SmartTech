@@ -12,7 +12,7 @@ Pode operar como **Loja Única Isolada** (site próprio da loja) ou como **Plata
 
 Abaixo está o índice hiperlinkado de todos os estágios operacionais da plataforma. Clique em qualquer estágio para ir direto para as instruções detalhadas:
 
-1. [🚀 **Estágio 1:** Instalação, Deploy & Setup Inicial](#estagio-1)
+1. [🚀 **Estágio 1:** Instalação, Deploy & Setup Inicial](#estagio-1) (ou veja o [📖 Guia de Deploy HostGator](DEPLOY_HOSTGATOR.md))
 2. [🎨 **Estágio 2:** Identidade Visual, Cores & Redes Sociais](#estagio-2)
 3. [⚙️ **Estágio 3:** E-mail (SMTP), SMS & Emissão Fiscal (Focus NFe)](#estagio-3)
 4. [📦 **Estágio 4:** Gestão de Categorias, Catálogo Online, Estoque & Imobilizados](#estagio-4)
@@ -28,6 +28,7 @@ Abaixo está o índice hiperlinkado de todos os estágios operacionais da plataf
 - **Local com Docker:**
   - Execute `docker compose up -d --build` e acesse [http://localhost:8000](http://localhost:8000).
 - **Produção na HostGator (cPanel / Plano P):**
+  - 👉 **[Clique aqui para abrir o Manual Completo Passo a Passo com Fotos: `DEPLOY_HOSTGATOR.md`](DEPLOY_HOSTGATOR.md)**
   - Acesse o assistente web integrado em `https://seudominio.com.br/install`.
   - O instalador valida as permissões, cria as tabelas do banco com 1 clique (`migrate --force --seed`), conecta a pasta pública de imagens e cria a trava de segurança (`installed.lock`).
 
