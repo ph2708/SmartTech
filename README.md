@@ -12,19 +12,19 @@ Pode operar como **Loja Única Isolada** (site próprio da loja) ou como **Plata
 
 Abaixo está o índice hiperlinkado de todos os estágios operacionais da plataforma. Clique em qualquer estágio para ir direto para as instruções detalhadas:
 
-1. [🚀 **Estágio 1:** Instalação, Deploy & Setup Inicial](#-estagio-1-instalacao-deploy--setup-inicial)
-2. [🎨 **Estágio 2:** Identidade Visual, Cores & Redes Sociais](#-estagio-2-identidade-visual-cores--redes-sociais)
-3. [⚙️ **Estágio 3:** E-mail (SMTP), SMS & Emissão Fiscal (Focus NFe)](#-estagio-3-e-mail-smtp-sms--emissao-fiscal-focus-nfe)
-4. [📦 **Estágio 4:** Gestão de Categorias, Catálogo Online, Estoque & Imobilizados](#-estagio-4-gestao-de-categorias-catalogo-online-estoque--imobilizados)
-5. [🛠️ **Estágio 5:** Assistência Técnica & Gestão de Ordens de Serviço (OS)](#-estagio-5-assistencia-tecnica--gestao-de-ordens-de-servico-os)
-6. [🛒 **Estágio 6:** Vendas de Balcão & Emissão de Cupom Fiscal (NFC-e)](#-estagio-6-vendas-de-balcao--emissao-de-cupom-fiscal-nfc-e)
-7. [💵 **Estágio 7:** Controle Financeiro, Despesas & Fechamento de Caixa](#-estagio-7-controle-financeiro-despesas--fechamento-de-caixa)
-8. [🏢 **Estágio 8:** Gestão de Filiais, Equipe & Troca de Unidade](#-estagio-8-gestao-de-filiais-equipe--troca-de-unidade)
-9. [👑 **Estágio 9:** Administração SaaS & Controle de Lojistas (Super Admin)](#-estagio-9-administracao-saas--controle-de-lojistas-super-admin)
+1. [🚀 **Estágio 1:** Instalação, Deploy & Setup Inicial](#estagio-1)
+2. [🎨 **Estágio 2:** Identidade Visual, Cores & Redes Sociais](#estagio-2)
+3. [⚙️ **Estágio 3:** E-mail (SMTP), SMS & Emissão Fiscal (Focus NFe)](#estagio-3)
+4. [📦 **Estágio 4:** Gestão de Categorias, Catálogo Online, Estoque & Imobilizados](#estagio-4)
+5. [🛠️ **Estágio 5:** Assistência Técnica & Gestão de Ordens de Serviço (OS)](#estagio-5)
+6. [🛒 **Estágio 6:** Vendas de Balcão & Emissão de Cupom Fiscal (NFC-e)](#estagio-6)
+7. [💵 **Estágio 7:** Controle Financeiro, Despesas & Fechamento de Caixa](#estagio-7)
+8. [🏢 **Estágio 8:** Gestão de Filiais, Equipe & Troca de Unidade](#estagio-8)
+9. [👑 **Estágio 9:** Administração SaaS & Controle de Lojistas (Super Admin)](#estagio-9)
 
 ---
 
-### 🚀 Estágio 1: Instalação, Deploy & Setup Inicial
+### <a id="estagio-1"></a>🚀 Estágio 1: Instalação, Deploy & Setup Inicial
 - **Local com Docker:**
   - Execute `docker compose up -d --build` e acesse [http://localhost:8000](http://localhost:8000).
 - **Produção na HostGator (cPanel / Plano P):**
@@ -33,7 +33,7 @@ Abaixo está o índice hiperlinkado de todos os estágios operacionais da plataf
 
 ---
 
-### 🎨 Estágio 2: Identidade Visual, Cores & Redes Sociais
+### <a id="estagio-2"></a>🎨 Estágio 2: Identidade Visual, Cores & Redes Sociais
 No menu **`⚙️ Configurações`**:
 - **Logotipo & Cores:** Envie a logo da loja e escolha as cores primária e secundária (com color-picker em tempo real).
 - **WhatsApp:** Defina o número que receberá os pedidos dos clientes.
@@ -41,7 +41,7 @@ No menu **`⚙️ Configurações`**:
 
 ---
 
-### ⚙️ Estágio 3: E-mail (SMTP), SMS & Emissão Fiscal (Focus NFe)
+### <a id="estagio-3"></a>⚙️ Estágio 3: E-mail (SMTP), SMS & Emissão Fiscal (Focus NFe)
 No menu **`⚙️ Configurações`**:
 - **E-mail (SMTP Transacional):** Preencha seu host (ex: `mail.seudominio.com.br`), porta (587/465), usuário e senha.
   - **Testador em Tempo Real:** Utilize o botão **`⚡ Testar e Validar SMTP`** para receber um e-mail de teste e verificar a conexão.
@@ -53,7 +53,7 @@ No menu **`⚙️ Configurações`**:
 
 ---
 
-### 📦 Estágio 4: Gestão de Categorias, Catálogo Online, Estoque & Imobilizados
+### <a id="estagio-4"></a>📦 Estágio 4: Gestão de Categorias, Catálogo Online, Estoque & Imobilizados
 No menu **`📦 Produtos / Estoque`**:
 - **3 Tipos de Itens:**
   1. `📦 Produto Físico (Mercadoria)`: Para itens que possuem estoque físico e são vendidos a clientes.
@@ -65,7 +65,7 @@ No menu **`📦 Produtos / Estoque`**:
 
 ---
 
-### 🛠️ Estágio 5: Assistência Técnica & Gestão de Ordens de Serviço (OS)
+### <a id="estagio-5"></a>🛠️ Estágio 5: Assistência Técnica & Gestão de Ordens de Serviço (OS)
 No menu **`🛠️ Assistência / OS`**:
 - **Entrada do Aparelho:** Cadastro do cliente, tipo de aparelho, marca, modelo, IMEI, senha de desbloqueio e acessórios deixados.
 - **Comprovante de Entrada com Termo de 90 Dias:** Botão **`🖨️ Imprimir`** gera via pronta para assinatura do cliente.
@@ -74,7 +74,7 @@ No menu **`🛠️ Assistência / OS`**:
 
 ---
 
-### 🛒 Estágio 6: Vendas de Balcão & Emissão de Cupom Fiscal (NFC-e)
+### <a id="estagio-6"></a>🛒 Estágio 6: Vendas de Balcão & Emissão de Cupom Fiscal (NFC-e)
 No menu **`🛒 Vendas / Pedidos`**:
 - **Nova Venda:** Registra vendas presenciais de balcão, dando baixa imediata no estoque e lançando a receita no fluxo financeiro.
 - **Emissão de Cupom Fiscal (NFC-e):** Botão **`🧾 NFC-e`** gera a nota fiscal da venda via Focus NFe.
@@ -82,7 +82,7 @@ No menu **`🛒 Vendas / Pedidos`**:
 
 ---
 
-### 💵 Estágio 7: Controle Financeiro, Despesas & Fechamento de Caixa
+### <a id="estagio-7"></a>💵 Estágio 7: Controle Financeiro, Despesas & Fechamento de Caixa
 No menu **`💵 Fluxo de Caixa`**:
 - **Entradas Automáticas:** Vendas e consertos de OS entregues são somados automaticamente nas receitas do mês.
 - **Despesas Operacionais:** Lance gastos com aluguel, energia, internet, peças de reposição, salários e impostos.
@@ -91,7 +91,7 @@ No menu **`💵 Fluxo de Caixa`**:
 
 ---
 
-### 🏢 Estágio 8: Gestão de Filiais, Equipe & Troca de Unidade
+### <a id="estagio-8"></a>🏢 Estágio 8: Gestão de Filiais, Equipe & Troca de Unidade
 No menu **`🏢 Filiais & Unidades`** e **`👥 Usuários & Equipe`**:
 - **Cadastrar Filial:** Crie novas unidades com opção de clonar automaticamente o catálogo da matriz.
 - **Vínculo de Colaboradores:** No cadastro de usuários, defina a qual filial o técnico ou atendente pertence.
@@ -101,7 +101,7 @@ No menu **`🏢 Filiais & Unidades`** e **`👥 Usuários & Equipe`**:
 
 ---
 
-### 👑 Estágio 9: Administração SaaS & Controle de Lojistas (Super Admin)
+### <a id="estagio-9"></a>👑 Estágio 9: Administração SaaS & Controle de Lojistas (Super Admin)
 No menu **`👑 Super Admin`** (`/super-admin/tenants`):
 - **Visão Geral:** Listagem de todos os lojistas cadastrados na plataforma com WhatsApp direto para contato.
 - **Gestão de Planos & Bloqueio:** Alterne planos (Free, Basic, Pro) ou desative lojas inadimplentes instantaneamente.
