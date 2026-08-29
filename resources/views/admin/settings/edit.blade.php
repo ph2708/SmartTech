@@ -29,22 +29,36 @@
                 <textarea id="description" name="description" rows="2">{{ old('description', $tenant->description) }}</textarea>
             </div>
 
-            <!-- Endereço -->
-            <div class="form-section-title">2. Endereço Físico</div>
+            <!-- Endereço e Localização -->
+            <div class="form-section-title">2. Endereço Físico & Localização no Google Maps</div>
 
             <div class="form-row">
                 <div class="form-group flex-2">
-                    <label for="address">Endereço</label>
-                    <input type="text" id="address" name="address" value="{{ old('address', $tenant->address) }}" placeholder="Rua, número, bairro">
+                    <label for="address">Endereço Completo</label>
+                    <input type="text" id="address" name="address" value="{{ old('address', $tenant->address) }}" placeholder="Ex: Av. Principal, nº 1000, Setor Central">
                 </div>
                 <div class="form-group">
                     <label for="city">Cidade</label>
-                    <input type="text" id="city" name="city" value="{{ old('city', $tenant->city) }}">
+                    <input type="text" id="city" name="city" value="{{ old('city', $tenant->city) }}" placeholder="Ex: Rio Verde">
                 </div>
                 <div class="form-group" style="max-width:100px">
                     <label for="state">UF</label>
                     <input type="text" id="state" name="state" value="{{ old('state', $tenant->state) }}" maxlength="2" placeholder="GO">
                 </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group flex-2">
+                    <label for="google_maps_link">Link do Google Maps (para abrir no GPS / Waze / Maps)</label>
+                    <input type="url" id="google_maps_link" name="google_maps_link" value="{{ old('google_maps_link', $tenant->google_maps_link) }}" placeholder="https://maps.app.goo.gl/... ou https://google.com/maps/place/...">
+                    <span class="help-text">O cliente poderá clicar para traçar rota direta no celular via GPS</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="google_maps_embed">Código de Incorporação do Mapa (HTML &lt;iframe&gt; do Google Maps)</label>
+                <textarea id="google_maps_embed" name="google_maps_embed" rows="3" placeholder='&lt;iframe src="https://www.google.com/maps/embed?pb=..." width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;'>{{ old('google_maps_embed', $tenant->google_maps_embed) }}</textarea>
+                <span class="help-text">💡 <strong>Como pegar:</strong> No Google Maps, busque o nome/endereço da loja ➔ Clique em <strong>"Compartilhar"</strong> ➔ <strong>"Incorporar um mapa"</strong> ➔ Copie e cole o código aqui.</span>
             </div>
 
             <!-- Redes Sociais -->
@@ -90,8 +104,8 @@
             <div class="form-group">
                 <label>Logo Atual</label>
                 @if($tenant->logo_url)
-                    <div class="current-image">
-                        <img src="{{ $tenant->logo_url }}" alt="{{ $tenant->name }}" style="max-height:80px;border-radius:8px;">
+                    <div class="current-image" style="background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid var(--border); display: inline-block;">
+                        <img src="{{ $tenant->logo_url }}" alt="{{ $tenant->name }}" style="max-height:80px; border-radius:6px; object-fit: contain;">
                     </div>
                 @else
                     <p class="help-text">Nenhuma logo cadastrada</p>
@@ -101,6 +115,16 @@
             <div class="form-group">
                 <label for="logo">Alterar Logotipo</label>
                 <input type="file" id="logo" name="logo" accept="image/*" class="file-input">
+                
+                <!-- Guia de Parâmetros de Imagem para o Lojista -->
+                <div style="margin-top: 10px; background: #f1f5f9; padding: 14px; border-radius: 8px; border-left: 4px solid #3b82f6; font-size: 0.85rem; color: #334155; line-height: 1.5;">
+                    <strong style="color: #1e293b; display: block; margin-bottom: 6px;">📐 Parâmetros Recomendados para Imagens:</strong>
+                    <ul style="margin-left: 18px; margin-bottom: 0;">
+                        <li><strong>Logotipo da Loja:</strong> <code>300 x 90 px</code> ou <code>400 x 120 px</code> (Formato Horizontal, PNG transparente ou WebP. Máx 2MB).</li>
+                        <li><strong>Fotos de Produtos & Galeria:</strong> <code>800 x 800 px</code> ou <code>1000 x 1000 px</code> (Proporção 1:1 Quadrada, JPG ou WebP para carregamento ultra rápido).</li>
+                        <li><strong>Banners de Destaque / Carrossel:</strong> <code>1200 x 400 px</code> (Proporção 3:1 Panorâmica).</li>
+                    </ul>
+                </div>
             </div>
 
             <!-- E-mail & SMTP Transacional -->

@@ -17,8 +17,8 @@
                     <span class="logo-icon">⚡</span>
                     <span>SmartCatálogo</span>
                 </a>
-                <h1>Crie sua loja grátis!</h1>
-                <p>Em menos de 2 minutos sua loja estará no ar</p>
+                <h1>Solicitar Meu Catálogo & Orçamento</h1>
+                <p>Preencha os dados abaixo para nossa equipe ativar sua plataforma</p>
             </div>
 
             @if($errors->any())
@@ -32,41 +32,44 @@
             <form method="POST" action="{{ route('register') }}" class="auth-form">
                 @csrf
                 <div class="form-group">
-                    <label for="name">Seu nome</label>
-                    <input type="text" id="name" name="name" value="{{ old('name') }}" required autofocus placeholder="João Silva">
+                    <label for="name">Seu Nome / Responsável *</label>
+                    <input type="text" id="name" name="name" value="{{ old('name') }}" required autofocus placeholder="Ex: João Silva">
                 </div>
 
                 <div class="form-group">
-                    <label for="store_name">Nome da sua loja</label>
-                    <input type="text" id="store_name" name="store_name" value="{{ old('store_name') }}" required placeholder="Ex: Smart Tech">
+                    <label for="store_name">Nome da sua Loja / Assistência *</label>
+                    <input type="text" id="store_name" name="store_name" value="{{ old('store_name') }}" required placeholder="Ex: Smart Tech Assistência">
                 </div>
 
                 <div class="form-group">
-                    <label for="whatsapp">WhatsApp (com DDD)</label>
-                    <input type="text" id="whatsapp" name="whatsapp" value="{{ old('whatsapp') }}" required placeholder="64 99249-5817">
+                    <label for="whatsapp">WhatsApp Comercial (com DDD) *</label>
+                    <input type="text" id="whatsapp" name="whatsapp" value="{{ old('whatsapp') }}" required placeholder="Ex: 64 99249-5817">
+                    <small style="color: #64748b; font-size: 0.8rem; margin-top: 4px; display: block;">Número onde você receberá os pedidos dos clientes</small>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">E-mail</label>
+                    <label for="email">E-mail para Acesso ao Painel *</label>
                     <input type="email" id="email" name="email" value="{{ old('email') }}" required placeholder="seu@email.com">
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="password">Senha</label>
+                        <label for="password">Defina sua Senha *</label>
                         <input type="password" id="password" name="password" required placeholder="Mínimo 6 caracteres">
                     </div>
                     <div class="form-group">
-                        <label for="password_confirmation">Confirmar senha</label>
+                        <label for="password_confirmation">Confirmar Senha *</label>
                         <input type="password" id="password_confirmation" name="password_confirmation" required placeholder="Repita a senha">
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-full">Criar Minha Loja 🚀</button>
+                <button type="submit" class="btn btn-primary btn-full" style="padding: 14px; font-weight: 800; font-size: 1rem;">
+                    🚀 Enviar Solicitação & Criar Meu Catálogo
+                </button>
             </form>
 
             <div class="auth-footer">
-                <p>Já tem uma conta? <a href="{{ route('login') }}">Faça login</a></p>
+                <p>Já possui acesso como lojista? <a href="{{ route('login') }}" style="font-weight: 700; color: #e63946;">Entrar no Painel</a></p>
             </div>
         </div>
     </div>

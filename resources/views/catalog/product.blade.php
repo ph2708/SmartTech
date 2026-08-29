@@ -14,30 +14,37 @@
 
     <div class="product-detail">
         <div class="product-gallery">
-            <div class="main-image">
+            <div class="main-image" style="position: relative; border-radius: 16px; overflow: hidden; background: #ffffff; box-shadow: 0 8px 30px rgba(0,0,0,0.08); border: 1px solid var(--border);">
                 @if($product->image_url)
-                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" id="mainImage">
+                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" id="mainImage" style="width: 100%; aspect-ratio: 1; object-fit: cover; transition: transform 0.3s ease;">
                 @else
-                    <div class="product-placeholder large">
-                        <span>{{ $product->category->icon ?? '📦' }}</span>
+                    <div class="product-placeholder large" style="aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: #f8fafc; font-size: 5rem;">
+                        <span>{{ $product->isAsset() ? '🏛️' : ($product->category->icon ?? '📦') }}</span>
                     </div>
                 @endif
 
                 @if($product->promotional_price)
-                <div class="discount-badge large">-{{ $product->discount_percent }}%</div>
+                <div class="discount-badge large" style="position: absolute; top: 16px; left: 16px; background: #ef4444; color: white; padding: 6px 14px; border-radius: 50px; font-weight: 800; font-size: 0.9rem; box-shadow: 0 4px 10px rgba(239,68,68,0.35);">-{{ $product->discount_percent }}% OFF</div>
+                @endif
+
+                @if($product->images->count() > 0)
+                <div style="position: absolute; bottom: 14px; right: 14px; background: rgba(15,23,42,0.75); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; backdrop-filter: blur(4px); display: flex; align-items: center; gap: 4px;">
+                    <span>📷 {{ $product->images->count() + 1 }} Fotos</span>
+                </div>
                 @endif
             </div>
 
+            <!-- Abas de Miniaturas Elegantes -->
             @if($product->images->count() > 0)
-            <div class="thumbnail-list">
+            <div class="thumbnail-list" style="display: flex; gap: 10px; margin-top: 14px; overflow-x: auto; padding-bottom: 6px;">
                 @if($product->image_url)
-                <button class="thumbnail active" onclick="changeImage('{{ $product->image_url }}', this)">
-                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
+                <button class="thumbnail active" onclick="changeImage('{{ $product->image_url }}', this)" style="border: 2px solid var(--primary, #e63946); border-radius: 10px; overflow: hidden; width: 75px; height: 75px; padding: 0; cursor: pointer; flex-shrink: 0; background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s;">
+                    <img src="{{ $product->image_url }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover;">
                 </button>
                 @endif
                 @foreach($product->images as $img)
-                <button class="thumbnail" onclick="changeImage('{{ $img->image_url }}', this)">
-                    <img src="{{ $img->image_url }}" alt="{{ $product->name }}">
+                <button class="thumbnail" onclick="changeImage('{{ $img->image_url }}', this)" style="border: 2px solid transparent; border-radius: 10px; overflow: hidden; width: 75px; height: 75px; padding: 0; cursor: pointer; flex-shrink: 0; background: white; box-shadow: 0 2px 6px rgba(0,0,0,0.06); transition: all 0.2s;">
+                    <img src="{{ $img->image_url }}" alt="{{ $product->name }}" style="width: 100%; height: 100%; object-fit: cover;">
                 </button>
                 @endforeach
             </div>
@@ -45,14 +52,25 @@
         </div>
 
         <div class="product-info-detail">
-            <span class="product-category-tag">{{ $product->category->icon }} {{ $product->category->name }}</span>
-            <h1>{{ $product->name }}</h1>
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                <span class="product-category-tag">{{ $product->category->icon }} {{ $product->category->name }}</span>
+                
+                @auth
+                @if(!request()->has('preview'))
+                <a href="{{ route('admin.produtos.edit', $product->id) }}" target="_blank" style="background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;" title="Editar este item no painel">
+                    ✏️ Editar Item (Admin)
+                </a>
+                @endif
+                @endauth
+            </div>
+
+            <h1 style="font-size: 1.9rem; font-weight: 800; line-height: 1.25; margin-top: 4px;">{{ $product->name }}</h1>
 
             <div class="product-pricing-detail">
                 @if($product->promotional_price)
                     <span class="price-old-detail">De: {{ $product->formatted_price }}</span>
                     <span class="price-current-detail">{{ $product->formatted_promotional_price }}</span>
-                    <span class="savings">Você economiza R$ {{ number_format($product->price - $product->promotional_price, 2, ',', '.') }}</span>
+                    <span class="savings">Economia de R$ {{ number_format($product->price - $product->promotional_price, 2, ',', '.') }}</span>
                 @else
                     <span class="price-current-detail">{{ $product->formatted_price }}</span>
                 @endif
@@ -97,9 +115,22 @@
 @section('scripts')
 <script>
 function changeImage(src, el) {
-    document.getElementById('mainImage').src = src;
-    document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+    const mainImg = document.getElementById('mainImage');
+    if (!mainImg) return;
+    
+    mainImg.style.opacity = '0.3';
+    setTimeout(() => {
+        mainImg.src = src;
+        mainImg.style.opacity = '1';
+    }, 150);
+
+    document.querySelectorAll('.thumbnail').forEach(t => {
+        t.classList.remove('active');
+        t.style.borderColor = 'transparent';
+    });
+    
     el.classList.add('active');
+    el.style.borderColor = 'var(--primary, #e63946)';
 }
 </script>
 @endsection

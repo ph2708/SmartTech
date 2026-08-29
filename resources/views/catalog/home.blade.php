@@ -22,25 +22,25 @@
                     <span class="brand-name">SmartCatálogo</span>
                 </div>
                 <div class="nav-links">
-                    <a href="{{ route('login') }}" class="btn btn-outline">Entrar</a>
-                    <a href="{{ route('register') }}" class="btn btn-primary">Criar Conta Grátis</a>
+                    <a href="{{ route('login') }}" class="btn btn-outline">Área do Lojista (Entrar)</a>
+                    <a href="{{ route('register') }}" class="btn btn-primary">Solicitar Catálogo / Orçamento</a>
                 </div>
             </nav>
 
             <div class="hero-content">
-                <div class="hero-badge">🚀 Plataforma #1 para catálogos online</div>
+                <div class="hero-badge">🚀 Plataforma Completa de Gestão & Catálogo Online</div>
                 <h1>Seu catálogo online<br>com vendas pelo <span class="gradient-text">WhatsApp</span></h1>
-                <p class="hero-subtitle">Crie seu catálogo de produtos em minutos e receba pedidos direto no seu WhatsApp. Perfeito para lojas de assistência técnica, acessórios, perfumes e muito mais.</p>
+                <p class="hero-subtitle">Crie seu catálogo de produtos personalizado, controle estoque, ordens de serviço e receba pedidos direto no WhatsApp da sua loja.</p>
                 <div class="hero-actions">
                     <a href="{{ route('register') }}" class="btn btn-primary btn-lg">
-                        Criar Meu Catálogo Grátis
+                        Solicitar Orçamento do Meu Catálogo
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat"><strong>{{ $tenants->count() }}+</strong><span>Lojas ativas</span></div>
                     <div class="stat"><strong>WhatsApp</strong><span>Integração direta</span></div>
-                    <div class="stat"><strong>100%</strong><span>Gratuito</span></div>
+                    <div class="stat"><strong>ERP Completo</strong><span>Estoque, OS e Finanças</span></div>
                 </div>
             </div>
         </div>
@@ -116,9 +116,9 @@
     <section class="cta-section">
         <div class="container">
             <div class="cta-card">
-                <h2>Pronto para vender mais?</h2>
-                <p>Crie seu catálogo online em menos de 5 minutos. Totalmente grátis.</p>
-                <a href="{{ route('register') }}" class="btn btn-primary btn-lg">Começar Agora</a>
+                <h2>Pronto para profissionalizar sua loja e vender mais?</h2>
+                <p>Crie seu catálogo personalizado, organize seu estoque e receba pedidos no WhatsApp.</p>
+                <a href="{{ route('register') }}" class="btn btn-primary btn-lg">Solicitar Orçamento da Minha Loja</a>
             </div>
         </div>
     </section>

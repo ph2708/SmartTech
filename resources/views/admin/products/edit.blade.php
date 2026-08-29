@@ -88,7 +88,8 @@
                     <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(this, 'mainPreview')">
                     <div class="upload-placeholder" id="mainPreview">
                         <span>📷</span>
-                        <p>Clique para trocar a imagem</p>
+                        <p>Clique para trocar a imagem de capa</p>
+                        <small>Recomendado: Proporção 1:1 Quadrada (800x800px até 1200x1200px) • JPG, PNG ou WebP</small>
                     </div>
                 </div>
             </div>
@@ -108,8 +109,9 @@
             @endif
 
             <div class="form-group">
-                <label for="additional_images">Adicionar Mais Imagens</label>
+                <label for="additional_images">Adicionar Mais Fotos à Galeria</label>
                 <input type="file" id="additional_images" name="additional_images[]" accept="image/*" multiple class="file-input">
+                <span class="help-text">Você pode selecionar várias fotos ao mesmo tempo (Recomendado: 800x800px).</span>
             </div>
 
             <div class="form-group" id="grpWhatsappMsg">

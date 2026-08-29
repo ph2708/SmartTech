@@ -80,15 +80,16 @@
                     <input type="file" id="image" name="image" accept="image/*" onchange="previewImage(this, 'mainPreview')">
                     <div class="upload-placeholder" id="mainPreview">
                         <span>📷</span>
-                        <p>Clique ou arraste para enviar</p>
-                        <small>JPG, PNG ou WebP. Máx. 2MB</small>
+                        <p>Clique ou arraste para enviar a foto de capa</p>
+                        <small>Recomendado: Proporção 1:1 Quadrada (800x800px até 1200x1200px) • JPG, PNG ou WebP</small>
                     </div>
                 </div>
             </div>
 
             <div class="form-group">
-                <label for="additional_images">Imagens Adicionais</label>
+                <label for="additional_images">Galeria de Imagens Adicionais (Ângulos e Detalhes)</label>
                 <input type="file" id="additional_images" name="additional_images[]" accept="image/*" multiple class="file-input">
+                <span class="help-text">Você pode selecionar várias fotos ao mesmo tempo (Recomendado: 800x800px). Elas serão exibidas na galeria do produto.</span>
             </div>
 
             <div class="form-group" id="grpWhatsappMsg">

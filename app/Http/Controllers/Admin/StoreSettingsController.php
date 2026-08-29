@@ -42,6 +42,8 @@ class StoreSettingsController extends Controller
             'address' => 'nullable|string|max:255',
             'city' => 'nullable|string|max:100',
             'state' => 'nullable|string|max:2',
+            'google_maps_embed' => 'nullable|string',
+            'google_maps_link' => 'nullable|string|max:1000',
             'instagram' => 'nullable|string|max:255',
             'show_instagram' => 'nullable|boolean',
             'facebook' => 'nullable|string|max:255',

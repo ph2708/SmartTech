@@ -25,6 +25,8 @@ class Tenant extends Model
         'address',
         'city',
         'state',
+        'google_maps_embed',
+        'google_maps_link',
         'instagram',
         'show_instagram',
         'facebook',

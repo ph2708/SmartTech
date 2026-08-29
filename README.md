@@ -34,11 +34,13 @@ Abaixo está o índice hiperlinkado de todos os estágios operacionais da plataf
 
 ---
 
-### <a id="estagio-2"></a>🎨 Estágio 2: Identidade Visual, Cores & Redes Sociais
+### <a id="estagio-2"></a>🎨 Estágio 2: Identidade Visual, Cores, Redes Sociais & Google Maps
 No menu **`⚙️ Configurações`**:
 - **Logotipo & Cores:** Envie a logo da loja e escolha as cores primária e secundária (com color-picker em tempo real).
-- **WhatsApp:** Defina o número que receberá os pedidos dos clientes.
-- **Instagram:** Insira o usuário (@sua_loja) ou link completo e marque `[x] Exibir botão de Instagram no cabeçalho e rodapé da loja pública`. Caso queira ocultar temporariamente, basta desmarcar o checkbox.
+- **Parâmetros de Imagens Integrados:** Guia com recomendações de tamanho (Logo: `400x120px`, Produtos: `800x800px`, Carrossel: `1200x400px`).
+- **WhatsApp:** Defina o número comercial onde você receberá os pedidos automáticos dos clientes.
+- **Instagram & Redes Sociais:** Insira o usuário (@sua_loja) e marque `[x] Exibir botão de Instagram no cabeçalho e rodapé da loja pública`.
+- **Google Maps & Localização:** Cole o link do Maps (para traçar rotas via Waze/GPS) e o código `<iframe>` para exibir o mapa interativo no rodapé do site.
 
 ---
 
@@ -56,6 +58,9 @@ No menu **`⚙️ Configurações`**:
 
 ### <a id="estagio-4"></a>📦 Estágio 4: Gestão de Categorias, Catálogo Online, Estoque & Imobilizados
 No menu **`📦 Produtos / Estoque`**:
+- **Carrossel Interativo no Topo da Loja:** Banners com transições automáticas a cada 5 segundos apresentando WhatsApp, Assistência Técnica e Qualidade.
+- **Galeria de Imagens com Miniaturas:** Visualização moderna de múltiplos ângulos do produto com fade suave e contador de fotos.
+- **Modo Preview Deslogado:** Botão no topo para o administrador visualizar a loja exatamente como um cliente comum.
 - **3 Tipos de Itens:**
   1. `📦 Produto Físico (Mercadoria)`: Para itens que possuem estoque físico e são vendidos a clientes.
   2. `🔧 Serviço (Assistência Técnica)`: Para mão de obra de consertos (estoque infinito).

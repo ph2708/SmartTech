@@ -1,4 +1,12 @@
-<article class="product-card">
+<article class="product-card" style="position: relative;">
+    @auth
+    @if(!request()->has('preview'))
+    <a href="{{ route('admin.produtos.edit', $product->id) }}" target="_blank" style="position: absolute; top: 8px; right: 8px; z-index: 10; background: rgba(15, 23, 42, 0.85); color: #ffffff; border: 1px solid rgba(255,255,255,0.3); padding: 3px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; text-decoration: none; backdrop-filter: blur(4px); box-shadow: 0 2px 6px rgba(0,0,0,0.25);" title="Editar produto no painel">
+        ✏️ Editar
+    </a>
+    @endif
+    @endauth
+
     @if($product->promotional_price)
     <div class="discount-badge">-{{ $product->discount_percent }}%</div>
     @endif
