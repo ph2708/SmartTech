@@ -29,7 +29,7 @@ class InstallController extends Controller
         $phpOk = version_compare($phpVersion, '8.2.0', '>=');
 
         $storageWritable = is_writable(storage_path());
-        $cacheWritable = is_writable(bootstrap_path('cache'));
+        $cacheWritable = is_writable(app()->bootstrapPath('cache'));
 
         return view('install.index', compact('dbConnected', 'dbError', 'phpVersion', 'phpOk', 'storageWritable', 'cacheWritable'));
     }
